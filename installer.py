@@ -1,6 +1,7 @@
 from resources import *
 import threading
 import os
+import platform
 
 # Global variables
 vec = pygame.math.Vector2
@@ -31,6 +32,8 @@ class Installer :
         self.my_device_model = ''
         self.android_transfered = False
         self.device_detected = False
+        self.platform = platform.system()
+        self.path = "downloads" + "/" + oneplus_app_data["CURRENT_DEVICE"]["NAME"] + "/" + "output"
 
     def oneplus_animation(self) :
 
@@ -72,7 +75,7 @@ class Installer :
         while not self.device_detected :
 
             try:
-                my_device_model = subprocess.check_output("cd platform-tools & adb shell getprop ro.product.model", shell=True, )
+                my_device_model = subprocess.check_output("platform-tools/%s/adb shell getprop ro.product.model" % self.platform , shell=True, )
                 my_device_model = my_device_model.decode("utf-8")
                 my_device_model = str(my_device_model)
                 self.my_device_model = my_device_model.replace(" ", "")
@@ -174,7 +177,7 @@ class Installer :
 
         partition_without_extension = partition.replace(".img", "")
 
-        os.system("cd platform-tools & fastboot flash %s %s" % (partition_without_extension ,partition))
+        os.system("platform-tools/%s/fastboot flash %s %s/%s" % (self.platform, partition_without_extension , self.path, partition))
 
 
     def install_ota(self) :
@@ -217,7 +220,7 @@ class Installer :
                 self.rebooting_system = False
 
     def reboot_fastboot(self) :
-        os.system("cd platform-tools & adb reboot bootloader")
+        os.system("platform-tools/%s/adb reboot bootloader" % self.platform)
 
     def start_install(self) :
 
@@ -282,4 +285,4 @@ class Installer :
             thread_2.join()
 
         # Reboot to system
-        os.system("cd platform-tools & fastboot reboot system")
+        os.system("platform-tools/%s/fastboot reboot system" % self.platform)

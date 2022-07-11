@@ -1,8 +1,11 @@
+import os
+os.system("pip install pyperclip")
+os.system("pip install pygame")
+os.system("pip install google")
+os.system("pip install protobuf")
 import pyperclip
 import pygame
-import tkinter
 import wget
-import os
 import json
 import threading
 import os.path
@@ -10,13 +13,8 @@ import time
 from datetime import date
 from datetime import datetime
 from pathlib import Path
-import pytube
-from pytube import YouTube
-from pytube import Playlist
-from pytube.cli import on_progress
 import urllib.request
 import platform
-import pyperclip
 from os.path import exists
 
 pygame.font.init() # Import font
