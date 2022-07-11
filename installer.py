@@ -75,7 +75,12 @@ class Installer :
         while not self.device_detected :
 
             try:
-                my_device_model = subprocess.check_output("platform-tools/%s/adb shell getprop ro.product.model" % self.platform , shell=True, )
+                if platform.system() == "Linux" :
+                    my_device_model = subprocess.check_output("platform-tools/%s/adb shell getprop ro.product.model" % self.platform , shell=True, )
+
+                else :
+                    my_device_model = subprocess.check_output("cd platform-tools/%s & adb shell getprop ro.product.model" % self.platform , shell=True, )
+
                 my_device_model = my_device_model.decode("utf-8")
                 my_device_model = str(my_device_model)
                 self.my_device_model = my_device_model.replace(" ", "")
@@ -177,7 +182,12 @@ class Installer :
 
         partition_without_extension = partition.replace(".img", "")
 
-        os.system("platform-tools/%s/fastboot flash %s %s/%s" % (self.platform, partition_without_extension , self.path, partition))
+        if platform.system() == "Linux" :
+            os.system("platform-tools/%s/fastboot flash %s %s/%s" % (self.platform, partition_without_extension , self.path, partition))
+
+        else :
+            os.system("cd platform-tools/%s & fastboot flash %s %s/%s" % (self.platform, partition_without_extension , self.path, partition))
+
 
 
     def install_ota(self) :
@@ -220,7 +230,12 @@ class Installer :
                 self.rebooting_system = False
 
     def reboot_fastboot(self) :
-        os.system("platform-tools/%s/adb reboot bootloader" % self.platform)
+        if platform.system() == "Linux" :
+            os.system("platform-tools/%s/adb reboot bootloader" % self.platform)
+
+        else :
+            os.system("cd platform-tools/%s & adb reboot bootloader" % self.platform)
+
 
     def start_install(self) :
 
@@ -285,4 +300,9 @@ class Installer :
             thread_2.join()
 
         # Reboot to system
-        os.system("platform-tools/%s/fastboot reboot system" % self.platform)
+        if platform.system() == "Linux" :
+            os.system("platform-tools/%s/fastboot reboot system" % self.platform)
+
+        else :
+            os.system("cd platform-tools/%s & fastboot reboot system" % self.platform)
+
