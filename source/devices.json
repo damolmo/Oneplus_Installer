@@ -1,0 +1,79 @@
+{
+"DEVICES": {
+		"ONEPLUS 6": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus6Oxygen_22.J.52_OTA_052_all_2103022341_f3ff04643ea24e51.zip"}, 
+
+		"ONEPLUS 6T": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus6TOxygen_34.J.61_OTA_0610_all_2109171644_7a4bfad9b1f940d5.zip"}, 
+
+		"ONEPLUS 7": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus7Oxygen_14.E.44_OTA_0440_all_2205261921_11d0849a67dc4137.zip"},
+
+		"ONEPLUS 7PRO": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus7ProOxygen_21.E.44_OTA_0440_all_2205261922_74e4c3c95fdd41e8.zip"}, 
+
+		"ONEPLUS 7T": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus7TOxygen_14.E.34_OTA_0340_all_2205261950_e9c1576dae8e413e.zip"}, 
+		
+		"ONEPLUS 7TPRO": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus7TProOxygen_14.E.34_OTA_0340_all_2205292220_1491aa19d80c4f86.zip"}, 
+
+		"ONEPLUS 8": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus8Oxygen_15.E.42_OTA_0420_all_2202141439_a219946519874834.zip"}, 
+
+		"ONEPLUS 8PRO": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus8ProOxygen_15.E.42_OTA_0420_all_2202141437_2a9246b51368450f.zip"}, 
+
+		"ONEPLUS NORD": {
+		"URL": "https://oxygenos.oneplus.net/NordOxygen_14.E.27_OTA_0270_all_2203101738_781a72712b68415c.zip"}, 
+
+		"ONEPLUS_NORD_N10": {
+		"URL": "https://oxygenos.oneplus.net/OnePlusN10Oxygen_14.E.36_OTA_0360_all_2205062006_6fd5c64cd13149fc.zip"}, 
+
+		"ONEPLUS 8T": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus8TOxygen_15.E.31_OTA_0310_all_2202182356_edc3927f4900402e.zip"}, 
+
+		"ONEPLUS N100": {
+		"URL": "https://oxygenos.oneplus.net/OnePlusN100Oxygen_14.E.25_OTA_0250_all_2203311235_b996401ed78044f0.zip"}, 
+
+		"ONEPLUS 9": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus9Oxygen_22.E.13_OTA_0130_all_2111112104_5bb5a1f0440a49b3.zip"}, 
+
+		"ONEPLUS 9PRO": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus9ProOxygen_22.E.13_OTA_0130_all_2111112110_8b4d5c8737d04612.zip"}, 
+
+		"ONEPLUS 9R": {
+		"URL": "https://oxygenos.oneplus.net/OnePlus9ROxygen_13.I.09_OTA_0090_all_2202232018_e3135475dbd64d69.zip"}, 
+
+		"ONEPLUS 9RT": {
+		"URL": "https://android.googleapis.com/packages/ota-api/package/80cc98661e54e02cd66c02de7bc01bf75ce6f1c7.zip"},
+	 
+		"ONEPLUS NORDCE": {
+		"URL": "https://oxygenos.oneplus.net/OnePlusNordCEOxygen_16.E.18_OTA_0180_all_2205071533_351e587815524bbd.zip"}, 
+
+		"ONEPLUS NORD2": {
+		"URL": "https://www.oneplus.com/es/support/softwareupgrade/N/A"}, 
+
+		"ONEPLUS_NORD_2T": {
+		"URL": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-60adf9aec6ff75e1e48218d066ceb02c/component-ota/22/06/30/9920607d758b45b6a7c5d90f5b4aa971.zip"}, 
+
+		"ONEPLUS N20": {
+		"URL": "https://android.googleapis.com/packages/ota-api/package/13885d2ce2a7c23bd2133fee03abc8fdb1f4fa64.zip"}, 
+		
+		"ONEPLUS N200": {
+		"URL": "https://android.googleapis.com/packages/ota-api/package/6be3f133f8fb9bbcc30d787679bd7b5da5e30995.zip"},
+
+		"ONEPLUS 10R": {
+		"URL": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-222d76b8a492fcad32c06fe5db9bce4d/component-ota/22/07/04/48e93645e7ad4dc88b5a254240faf0f0.zip"}, 
+
+		"ONEPLUS 10R 150W": {
+		"URL": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-555b6d05c10687f5d75efae74d81692a/component-ota/22/07/04/ed302d6010e6467aad9ee74751855c70.zip"},
+
+		"ONEPLUS 10PRO": {
+		"URL": "https://gauss-componentotacostmanual-sg.allawnofs.com/remove-9dd967437dba7ded80581f93b9d1fe58/component-ota/22/06/23/079d60fe03f04c7d9efa22aabb6de041.zip"}}, 
+
+		"CURRENT_DEVICE": {
+		"NAME": "", 
+		"URL": ""}
+
+}
