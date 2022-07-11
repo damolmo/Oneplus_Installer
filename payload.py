@@ -7,7 +7,7 @@ from zipfile import ZipFile
 import threading
 import os
 import os.path
-
+import platform
 
 # Global variables
 vec = pygame.math.Vector2
@@ -138,7 +138,12 @@ class Payload(object):
         installer.start_install()
 
     def decompress_payload(self, command, data, size, hash):
-        p = subprocess.Popen(['binaries/'+command+'.exe', '-'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+        if platform.system() == "Windows" :
+            p = subprocess.Popen(['binaries/'+command+'.exe', '-'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+
+        else :
+            p = subprocess.Popen([command, '-'], stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+
         r = p.communicate(data)[0]
         
         return r

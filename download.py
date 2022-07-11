@@ -4,6 +4,7 @@ import threading
 import wget
 from zipfile import ZipFile
 import shutil
+import platform
 
 # Global variables
 vec = pygame.math.Vector2
@@ -118,9 +119,12 @@ class Download :
 
         # Download choosed OTA file
         #wget.download(oneplus_app_data["CURRENT_DEVICE"]["URL"], path, bar=self.bar_progress)
-        file = os.system("cd binaries & wget.exe -O ota.zip %s" % (oneplus_app_data["CURRENT_DEVICE"]["URL"]))
+        if platform.system() == "Windows" :
+            file = os.system("cd binaries & wget.exe -O ota.zip %s" % (oneplus_app_data["CURRENT_DEVICE"]["URL"]))
+            os.system("cd binaries & move ota.zip ../%s" % path)
 
-        os.system("cd binaries & move ota.zip ../%s" % path)
+        else :
+            wget.download(oneplus_app_data["CURRENT_DEVICE"]["URL"], path, bar=self.bar_progress)
 
         self.downloading = False
         self.extracting = True
