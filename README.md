@@ -1,5 +1,5 @@
 <img src = "Assets/logo/logo.png">  <br/>
-Windows Desktop GUI for installing OTA Updates from fastboot on Oneplus Devices
+Multiplatform Desktop GUI for installing OTA Updates from fastboot on Oneplus Devices
 
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
@@ -16,8 +16,7 @@ Windows Desktop GUI for installing OTA Updates from fastboot on Oneplus Devices
 <br/>
 
 # System Requirements
-• Windows Computer
-• (opt) Python3
+• Python3
 
 # Features
 • Desktop GUI for installing OTA updates in OnePlus Devices<br/>
@@ -25,6 +24,14 @@ Windows Desktop GUI for installing OTA Updates from fastboot on Oneplus Devices
 • 3-In-1 Application (Download, Extract and Install OTA)<br/>
 
 # Installation
+
+```GNU/Linux ```
+```
+git clone https://github.com/daviiid99/Oneplus_Installer.git Oneplus_Installer
+cd Oneplus_Installer
+python3 Oneplus_Installer.py
+```
+<br/>
 
 ``` Microsoft Windows```
 ```
