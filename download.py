@@ -95,7 +95,7 @@ class Download :
 
             # Show download progress on display
             text = normal_font.render(self.progress_message, 1, WHITE)
-            self.screen.blit(text, (600, 500))
+            self.screen.blit(text, (580, 550))
 
         if self.extracting :
             self.screen.blit(animation, (-10, -80))
