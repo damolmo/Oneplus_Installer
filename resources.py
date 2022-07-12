@@ -108,3 +108,4 @@ animation_485 = pygame.image.load(os.path.join('Assets/logo/animation', "frame_4
 
 # Android
 android_bg = pygame.transform.scale(pygame.image.load(os.path.join('Assets/android', "background.png")), (400, 600))
+smartphone_bg = pygame.image.load(os.path.join('Assets/android', 'smartphone.png'))

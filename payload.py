@@ -75,18 +75,19 @@ class Payload(object):
     def draw_extracting_window(self) :
 
         while self.extract_payload :
+            
             self.screen.fill(BLACK)
-            self.screen.blit(animation_485, (0, -150))
-            dialog = small_font.render("Extracting %s..." % self.partition_name, 1, WHITE)
-            self.screen.blit(dialog, (510, 400))
+            self.screen.blit(smartphone_bg, (120, -150))
+            self.screen.blit(animation_485, (-10, -80))
+            dialog = small_font.render("Extracting %s" % self.partition_name, 1, WHITE)
+            self.screen.blit(dialog, (560, 450))
 
-            pygame.display.update()
-
-        if not self.extract_payload :
-            self.screen.fill(BLACK)
-            self.screen.blit(animation_485, (0, -150))
-            dialog = small_font.render("Everything ready!", 1, WHITE)
-            self.screen.blit(dialog, (550, 400))
+            if not self.extract_payload :
+                self.screen.fill(BLACK)
+                self.screen.blit(smartphone_bg, (120, -150))
+                self.screen.blit(animation_485, (-10, -80))
+                dialog = small_font.render("Everything ready!", 1, WHITE)
+                self.screen.blit(dialog, (560, 450))
 
             pygame.display.update()
 

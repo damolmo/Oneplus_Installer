@@ -75,24 +75,32 @@ class Download :
 
     def draw_screen(self, animation) :
 
+
+        # Background color
         self.screen.fill(BLACK)
 
         # Show Oneplus animation on download
-        self.screen.blit(animation, (0,-150))
+        self.screen.blit(animation, (-10,-80))
+
+        # Smartphone bg
+        self.screen.blit(smartphone_bg, (120, -150))
 
         # Current device message
         if self.downloading :
-            dialog = small_font.render("Downloading OTA for %s" % oneplus_app_data["CURRENT_DEVICE"]["NAME"], 1, WHITE)
-            self.screen.blit(dialog, (450, 400))
+            dialog = normal_font.render("Downloading OTA", 1, WHITE)
+            self.screen.blit(dialog, (560, 450))
+
+            dialog = normal_font.render(oneplus_app_data["CURRENT_DEVICE"]["NAME"], 1, WHITE)
+            self.screen.blit(dialog, (580, 500))
 
             # Show download progress on display
-            text = small_font.render(self.progress_message, 1, WHITE)
-            self.screen.blit(text, (575, 450))
+            text = normal_font.render(self.progress_message, 1, WHITE)
+            self.screen.blit(text, (600, 500))
 
         if self.extracting :
-            self.screen.blit(animation, (0, -150))
-            dialog = small_font.render("Extracting OTA file...", 1, WHITE)
-            self.screen.blit(dialog, (550, 400))
+            self.screen.blit(animation, (-10, -80))
+            dialog = small_font.render("Extracting OTA", 1, WHITE)
+            self.screen.blit(dialog, (560, 450))
 
 
         pygame.display.update()
