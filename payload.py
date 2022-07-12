@@ -71,23 +71,61 @@ class Payload(object):
         self.payload_file = payload_file
         self.output = ''
         self.partitions_list = []
+        self.rect_one = pygame.Rect(0, 0, 1500, 10)
+        self.background = BLACK
+
+        self.color_list = ["#16134F", "#1F1C5F", "#2D2972", "#3B3783", "#4F4C99", "#605DA9", "#736FBA", "#8784C9", "#9D9AD8", "#BDBBEE"]
+        self.reverse_color_list = ["#BDBBEE", "#9D9AD8", "#9D9AD8", "#736FBA", "#605DA9", "#4F4C99", "#3B3783", "#2D2972", "#1F1C5F", "#16134F"]
+        self.isReverse = False
+
+
+    def slogan_color(self) :
+
+        while self.extract_payload:
+
+            count  = 0
+            color_list = self.color_list
+
+            for color in color_list :
+                # 1+ Logo Animation
+                self.background = color
+                self.clock.tick(1)
+                    
+
+                if count == len(color_list) and not self.isReverse :
+                    count = 0
+                    color_list = self.reverse_color_list
+                    isReverse = True
+
+                elif count == len(self.color_list) and self.isReverse :
+                    count = 0
+                    color_list = self.color_list
+                    isReverse = False
 
     def draw_extracting_window(self) :
 
         while self.extract_payload :
-            
-            self.screen.fill(BLACK)
-            self.screen.blit(smartphone_bg, (120, -150))
-            self.screen.blit(animation_485, (-10, -80))
-            dialog = small_font.render("Extracting %s" % self.partition_name, 1, WHITE)
-            self.screen.blit(dialog, (560, 450))
 
-            if not self.extract_payload :
-                self.screen.fill(BLACK)
-                self.screen.blit(smartphone_bg, (120, -150))
-                self.screen.blit(animation_485, (-10, -80))
-                dialog = small_font.render("Everything ready!", 1, WHITE)
-                self.screen.blit(dialog, (560, 450))
+            self.screen.fill(BLACK)
+
+            self.screen.blit(animation_485, (-10, -80))
+
+            # Never Settle
+            # Slogan
+            pygame.draw.rect(self.screen, self.background, self.rect_one)
+            
+
+            dialog = slogan_font.render("NEVER", 1, WHITE)
+            self.screen.blit(dialog, (50, 250))
+            dialog = slogan_font.render("SETTLE", 1, WHITE)
+            self.screen.blit(dialog, (800, 250))
+        
+            self.screen.blit(smartphone_bg, (120, -150))
+            
+            dialog = small_font.render("Extracting", 1, WHITE)
+            self.screen.blit(dialog, (570, 450))
+            dialog = small_font.render(self.partition_name, 1, WHITE)
+            self.screen.blit(dialog, (570, 480))
 
             pygame.display.update()
 
@@ -121,11 +159,13 @@ class Payload(object):
         thread_1 = threading.Thread(target=self.draw_extracting_window, name="ui")
         thread_2 = threading.Thread(target=self.controller_screen, name="ui")
         thread_3 = threading.Thread(target=self.extracting_payload, name="payload", args=([payload, output]))
+        thread_4 = threading.Thread(target=self.slogan_color, name="payload")
 
         # Start threads
         thread_1.start()
         thread_2.start()
         thread_3.start()
+        thread_4.start()
 
         start = self.controller_screen()
 
@@ -134,6 +174,7 @@ class Payload(object):
             thread_1.join()
             thread_2.join()
             thread_3.join()
+            thread_4.join()
 
         installer = Installer()
         installer.start_install()

@@ -42,6 +42,7 @@ clock = pygame.time.Clock()
 small_font = pygame.font.Font(None, 30)
 normal_font = pygame.font.Font(None, 25)
 large_font = pygame.font.Font(None, 50)
+slogan_font = pygame.font.Font(None, 170)
 mini_font = pygame.font.Font(None, 18)
 
 ## App External Data

@@ -305,4 +305,4 @@ class Installer :
 
         else :
             os.system("cd platform-tools/%s & fastboot reboot system" % self.platform)
-
+            
